@@ -199,14 +199,15 @@ public class IdempotentAspect {
 
     /**
      * springboot是无法自动注入RestTemplate ，但是springCloud可以自动注入，
-     * 我们要初始化springboot配置类中注入RestTemplate ，这样子在其他class中 @Autowired RestTemplate restUtil就不会有问题了
+     * 我们要初始化springboot配置类中注入RestTemplate
+     * 这样子在其他class中 @Autowired RestTemplate restTemplate就不会有问题了
      */
-    @Bean
-    public RedisTemplate redisTemplateInit() {
-        //设置序列化Key的实例化对象
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        //设置序列化Value的实例化对象
-        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-        return redisTemplate;
-    }
+//    @Bean
+//    public RedisTemplate redisTemplateInit() {
+//        //设置序列化Key的实例化对象
+//        redisTemplate.setKeySerializer(new StringRedisSerializer());
+//        //设置序列化Value的实例化对象
+//        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+//        return redisTemplate;
+//    }
 }
